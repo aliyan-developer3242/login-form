@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORMS - HTML</title>
+    <style>
+      /* Reset some basic styles */
+      /* Reset basic styles */
+      * 
+/* Reset basic styles */
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body styling */
+      body {
+        font-family: "Times New Roman", Times, serif, sans-serif;
+        background-color: #f4f8fb; /* Light greyish blue background */
+        color: #000000;
+        padding: 20px;
+      }
+
+      /* Center the form and give it a max width */
+      form {
+        background-color: #f8f8f8;
+        padding: 30px;
+        max-width: 650px;
+        margin: 0 auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Styling for each form element container */
+      div {
+        margin-bottom: 20px;
+      }
+
+      /* Label styling */
+      label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 8px;
+        color: #e7eff3; /* Muted gray-blue */
+        font-size: 16px;
+      }
+
+      /* Input and Select field styling */
+      input[type="text"],
+      input[type="tel"],
+      input[type="email"],
+      input[type="password"],
+      input[type="date"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #56cfe1; /* Bright teal border */
+        border-radius: 8px;
+        font-size: 14px;
+        color: #333;
+        background-color: #e0f7fa; /* Soft teal background */
+        transition: border-color 0.3s, background-color 0.3s;
+      }
+
+      input[type="text"]:focus,
+      input[type="tel"]:focus,
+      input[type="email"]:focus,
+      input[type="password"]:focus,
+      input[type="date"]:focus,
+      select:focus,
+      textarea:focus {
+        border-color: #00bcd4; /* Teal color on focus */
+        background-color: #b2ebf2; /* Lighter teal on focus */
+        outline: none;
+      }
+
+      /* Textarea specific styles */
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      /* Radio buttons and checkboxes styling */
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
+
+      /* Subscription section */
+      div p {
+        font-weight: bold;
+        color: #ff7043; /* Warm coral color */
+        font-size: 18px;
+      }
+
+      /* Button Styling with Animation */
+      button[type="submit"] {
+        background-color: #000000; /* Vibrant pink for the button */
+        color: white;
+        padding: 12px 20px;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s ease, transform 0.2s ease,
+          box-shadow 0.3s ease;
+        position: relative;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #308499; /* Darker pink on hover */
+        transform: scale(1.05); /* Slight grow effect */
+        box-shadow: 0 4px 12px rgba(78, 11, 11, 0.2); /* Add shadow effect */
+      }
+
+      button[type="submit"]:active {
+        transform: scale(0.98); /* Shrink a bit when clicked */
+      }
+
+      /* Checkbox and Label spacing */
+      div label {
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* Add some space and make the labels and fields line up neatly */
+      form div:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Make the form responsive */
+      @media (max-width: 600px) {
+        form {
+          padding: 20px;
+          width: 100%;
+        }
+      }
+
+      /* Adding a colorful border to the form to make it stand out */
+      form {
+        border: 3px solid #56cfe1; /* Bright teal border */
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Login form</h1>
+
+    <form action="/submit.php">
+      <!-- First Block -->
+      <div>
+        <label for="Name">Name</label>
+        <input type="text" id="Name" placeholder="Enter your Name" required />
+      </div>
+
+      <div>
+        <label for="ph">Phone</label>
+        <input
+          type="tel"
+          id="ph"
+          placeholder="Enter your Phone Number"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="Email">Email</label>
+        <input
+          type="email"
+          id="Email"
+          placeholder="Enter your Email"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="pass">Password</label>
+        <input
+          type="password"
+          id="pass"
+          placeholder="Enter your Password"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="date">Date Of Birth</label>
+        <input
+          type="date"
+          id="Date"
+          placeholder="Enter your Pssword"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="Gen">Gender</label>
+        <select id="Gen" required>
+          <option value="disabled selected">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="other">other</option>
+        </select>
+      </div>
+
+      <div>
+        <p>Subscription</p>
+        <label for="bas">BASIC</label>
+        <input type="radio" name="Subscription" id="" />
+
+        <label for="pr">PREMIUM</label>
+        <input type="radio" name="Subscription" id="pr" />
+
+        <label for="VIP">VIP</label>
+        <input type="radio" name="Subscription" id="VIP" />
+      </div>
+
+      <div>
+        <input type="checkbox" required id="term" />
+        <label for="term">I agree to the terms and condition</label>
+      </div>
+
+      <div>
+        <label for="com">Comment</label>
+        <textarea id="com" placeholder="Enter your Comment"></textarea>
+      </div>
+
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>
